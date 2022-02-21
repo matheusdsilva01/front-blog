@@ -1,0 +1,23 @@
+.container-password{
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+input{
+    outline: none;
+    width: 100%;
+    padding: 20px;
+}
+a{
+    position: absolute;
+    right: 0;
+}
+#offVisible{
+    display: none;
+}
