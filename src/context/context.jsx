@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import api from "../service/api";
 
 
@@ -9,7 +9,8 @@ const Context = createContext()
 function Auth({ children }) {
     const [authenticated, setAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
+    let location = useLocation();
+    let navigate = useNavigate();
 
     /**
      * Verifica se o usuario ja está logado
@@ -21,7 +22,7 @@ function Auth({ children }) {
         if (token) {
             api.defaults.headers.common['Authorization'] = JSON.parse(token)
             setAuthenticated(true)
-            if (window.location.pathname === '/login') {
+            if (location.pathname === '/login') {
                 navigate('/')
             }
         }
