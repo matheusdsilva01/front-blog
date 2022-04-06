@@ -29,17 +29,15 @@ function Auth({ children }) {
         setLoading(false)
     }, [])
 
-    /**
-     * Função para realizar o login do usuario 
-    */
+    /** Função para realizar o login do usuario */
     const handleLogin = (boolean, tkn) => {
-
         setAuthenticated(boolean)
         const token = tkn
         localStorage.setItem('token', JSON.stringify(token))
         api.defaults.headers.common['Authorization'] = token;
         navigate('/')
     }
+
     if (loading) {
         return <h1>loading</h1>
     }

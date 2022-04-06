@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import visibility from '../../assets/icons/visibility_black_24dp.svg';
 import offVisibility from '../../assets/icons/visibility_off_black_24dp.svg';
 import api from '../../service/api';
@@ -61,6 +61,9 @@ export default function Index() {
         </div>
         <button >Cadastrar usuario</button>
       </form>
+      <Link to='/login'>login</Link>
+      <br />
+      <Link to='/'>Home</Link>
     </>
   )
 }
